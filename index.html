@@ -7,8 +7,16 @@
     <title>Блокчейн-технологии</title>
   </head>
   <body>
-    <header class="container mx-auto py-6 px-4 mb-12">
+    <header
+      class="container mx-auto py-6 px-4 mb-12 flex sticky top-0 bg-[#242424] z-10 justify-between items-center"
+    >
       <h1 class="text-3xl" id="blockchain-technologies">Блокчейн-технологии</h1>
+      <nav>
+        <ul class="flex gap-10 text-lg">
+          <a href="#popular" class="px-4"><li>Блокчейны</li></a>
+          <a href="#terms" class="px-4"><li>Термины</li></a>
+        </ul>
+      </nav>
     </header>
     <main class="container mx-auto px-4 mb-12">
       <div class="flex justify-center items-center gap-[280px]">
@@ -19,6 +27,7 @@
         <a
           href="https://academy.binance.com/ru/articles/what-is-blockchain-and-how-does-it-work"
           target="_blank"
+          class="transition ease-out hover:scale-105"
         >
           <img
             src="/blockchain.png"
@@ -105,7 +114,7 @@ contract VendingMachine {
 }
         </pre>
       </section>
-      <section class="mb-8">
+      <section class="mb-8" id="popular">
         <h3 class="text-3xl mb-8">Популярные блокчейны</h3>
         <ol type="a" start="2" class="list-[lower-alpha] ml-16 mb-8">
           <li>Ethereum</li>
@@ -127,7 +136,39 @@ contract VendingMachine {
           </li>
         </ol>
       </section>
-      <section class="mb-8">
+      <section class="mb-8 clearfix">
+        <img
+          src="/section-image-0.png"
+          alt="Аниме"
+          width="500"
+          class="float-left mr-4"
+        />
+        <p class="text-lg">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+          ullam minus, at sequi odio iure non error, placeat saepe, et
+          consectetur maxime culpa laboriosam? Dolor, impedit! Rerum asperiores
+          ut laborum. Odit ipsum ipsam quo corrupti eaque cum qui consequatur
+          magnam praesentium quia minus eius tempore inventore, quod modi natus
+          iste, perferendis ea?
+        </p>
+      </section>
+      <section class="mb-8 clearfix">
+        <img
+          src="/section-image-1.png"
+          alt="Аниме"
+          width="500"
+          class="float-right ml-4"
+        />
+        <p class="text-lg">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+          ullam minus, at sequi odio iure non error, placeat saepe, et
+          consectetur maxime culpa laboriosam? Dolor, impedit! Rerum asperiores
+          ut laborum. Odit ipsum ipsam quo corrupti eaque cum qui consequatur
+          magnam praesentium quia minus eius tempore inventore, quod modi natus
+          iste, perferendis ea?
+        </p>
+      </section>
+      <section class="mb-8" id="terms">
         <h3 class="text-3xl mb-8">Термины используемые в блокчейне</h3>
         <dl class="text-lg">
           <dt>Блокчейн</dt>
@@ -202,6 +243,12 @@ contract VendingMachine {
           />
         </map>
       </section>
+      <section class="mb-8 relative h-52 p-4 bg-[#5059ff]">
+        I'am relative positioned section
+        <div class="bg-[#646cff] p-4 absolute top-14 left-14">
+          I'm absolute positioned div
+        </div>
+      </section>
     </main>
     <footer
       class="container mx-auto px-4 mb-12 flex justify-between items-center"
@@ -223,6 +270,33 @@ contract VendingMachine {
           >Написать на почту</a
         >
       </div>
+      <button class="scrollTopBtn">
+        <svg
+          fill="#ffffff"
+          width="35px"
+          height="35px"
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 330 330"
+          xml:space="preserve"
+          stroke="#ffffff"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              id="XMLID_224_"
+              d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394 l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393 C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"
+            ></path>
+          </g>
+        </svg>
+      </button>
     </footer>
     <script type="module" src="/main.js"></script>
   </body>

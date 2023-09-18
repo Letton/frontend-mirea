@@ -30,4 +30,31 @@
   html {
     scroll-behavior: smooth;
   }
+
+  .clearfix {
+    zoom: 1;
+    :before,
+    :after {
+      content: "";
+      display: table;
+    }
+    :after {
+      clear: both;
+    }
+  }
+}
+
+.scrollTopBtn {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.5s ease;
+}
+
+.showScrollTopBtn {
+  opacity: 1;
+  transform: translateY(0);
 }
