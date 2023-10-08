@@ -11,15 +11,27 @@
       class="container mx-auto py-6 px-4 mb-12 flex sticky top-0 bg-[#242424] z-10 justify-between items-center"
     >
       <h1 class="text-3xl" id="blockchain-technologies">Блокчейн-технологии</h1>
-      <nav>
-        <ul class="flex gap-10 text-lg">
-          <a href="#popular" class="px-4"><li>Блокчейны</li></a>
-          <a href="#terms" class="px-4"><li>Термины</li></a>
+      <nav
+        class="navbar fixed top-[84px] left-0 md:static md:top-0 h-screen w-screen md:h-auto md:w-auto bg-[#242424] md:visible md:opacity-100"
+      >
+        <ul class="flex gap-10 text-lg w-full h-full md:flex-row flex-col">
+          <a href="#popular" class="px-4 py-8 md:py-0 text-center"
+            ><li>Блокчейны</li></a
+          >
+          <a href="#terms" class="px-4 py-8 md:py-0 text-center"
+            ><li>Термины</li></a
+          >
         </ul>
       </nav>
+      <div class="block md:hidden">
+        <input type="checkbox" name="menu" id="menu" class="hidden" />
+        <label for="menu" class="burger">
+          <div></div>
+        </label>
+      </div>
     </header>
     <main class="container mx-auto px-4 mb-12">
-      <div class="flex justify-center items-center gap-[280px]">
+      <div class="flex justify-center items-center gap-[280px] mb-8">
         <h2 class="block text-5xl leading-[4rem]" id="hero-section">
           <strong>Блокчейн</strong><br />
           что это такое <br />и как его используют
@@ -27,7 +39,7 @@
         <a
           href="https://academy.binance.com/ru/articles/what-is-blockchain-and-how-does-it-work"
           target="_blank"
-          class="transition ease-out hover:scale-105"
+          class="transition ease-out hover:scale-105 hidden md:block"
         >
           <img
             src="/blockchain.png"
@@ -89,7 +101,7 @@
       </section>
       <section class="mb-8">
         <h3 class="text-3xl mb-8">Пример смарт-контракта Ethereum</h3>
-        <pre>
+        <pre class="overflow-x-auto">
 contract VendingMachine {
   address public owner;
   mapping (address => uint) public cupcakeBalances;
@@ -251,7 +263,10 @@ contract VendingMachine {
       </section>
       <section class="mb-8">
         <h3 class="text-3xl mb-8">Тестовая форма</h3>
-        <form action="GET" class="max-w-xl w-full flex gap-4">
+        <form
+          action="GET"
+          class="max-w-xl w-full flex gap-4 flex-col md:flex-row"
+        >
           <div>
             <div class="mb-4">
               <label for="text_input" class="block mb-2">Текстовое поле</label>
@@ -414,6 +429,85 @@ contract VendingMachine {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
+      </section>
+      <section class="mb-8 flex gap-2 flex-wrap">
+        <h3 class="text-3xl mb-8">Flex example</h3>
+        <div
+          class="flex-[2_2_100%] border-2 border-[#646cff] h-28 lg:flex-[3_3_100%] p-4"
+        >
+          A
+        </div>
+        <div
+          class="flex-[2_2_100%] border-2 border-[#646cff] h-28 lg:flex-[2_2_66%] p-4"
+        >
+          B
+        </div>
+        <div
+          class="flex-[2_2_100%] border-2 border-[#646cff] h-28 lg:flex-[1_1_33%] p-4"
+        >
+          C
+        </div>
+        <div
+          class="flex-[1_1_0%] border-2 border-[#646cff] h-28 lg:[2_2_66%] p-4"
+        >
+          D
+        </div>
+        <div
+          class="flex-[1_1_0%] border-2 border-[#646cff] h-28 lg:flex-[1_1_33%] p-4"
+        >
+          E
+        </div>
+      </section>
+      <section class="mb-8 flex gap-2 flex-wrap">
+        <h3 class="text-3xl mb-8">Галлерея</h3>
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="flex gap-4 flex-col flex-1">
+            <img
+              src="https://images.unsplash.com/photo-1682687220336-bbd659a734e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&w=1000&q=80"
+              alt="Random iamge"
+            />
+            <img
+              src="https://plus.unsplash.com/premium_photo-1695635984900-248d6c918ff9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&w=1000&q=80"
+              alt="Random iamge"
+            />
+            <img
+              src="https://plus.unsplash.com/premium_photo-1684164601345-b8c12cd7a232?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D&w=1000&q=80"
+              alt="Random iamge"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1695990190649-4df3277b3be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80"
+              alt="Random iamge"
+            />
+          </div>
+          <div class="flex gap-4 flex-col flex-1">
+            <img
+              src="https://images.unsplash.com/photo-1696257203553-20ada15fce65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=2000&q=60"
+              alt="Random iamge"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1696587522095-1d0b522b3e36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=2000&q=60"
+              alt="Random iamge"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1696421924553-925caaf2c57e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8&w=1000&q=80"
+              alt="Random iamge"
+            />
+          </div>
+          <div class="flex gap-4 flex-col flex-1">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1666277011439-b204a2cd86be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8&w=1000&q=80"
+              alt="Random iamge"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1696621690997-14ebd5519c22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHx8&w=1000&q=80"
+              alt="Random iamge"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1696321832508-ba1e671f4406?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80"
+              alt="Random iamge"
+            />
+          </div>
+        </div>
       </section>
     </main>
     <footer

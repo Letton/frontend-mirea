@@ -22,3 +22,13 @@ scrollToTopBtn.addEventListener("click", () => {
 
 let observer = new IntersectionObserver(callback);
 observer.observe(target);
+
+const menu = document.getElementById("menu");
+const navbar = document.querySelector(".navbar");
+menu.addEventListener("change", (e) => {
+  if (e.currentTarget.checked) {
+    navbar.classList.add("visible");
+  } else {
+    navbar.classList.remove("visible");
+  }
+});
