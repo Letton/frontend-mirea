@@ -127,3 +127,12 @@
     opacity: 1;
   }
 }
+
+.list-item {
+  &:hover {
+    span {
+      @apply bg-white;
+      @apply text-[#646cff];
+    }
+  }
+}

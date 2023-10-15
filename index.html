@@ -8,7 +8,7 @@
   </head>
   <body>
     <header
-      class="container mx-auto py-6 px-4 mb-12 flex sticky top-0 bg-[#242424] z-10 justify-between items-center"
+      class="container mx-auto py-6 px-4 mb-12 flex sticky top-0 bg-[#242424] z-10 justify-between items-center z-50"
     >
       <h1 class="text-3xl" id="blockchain-technologies">Блокчейн-технологии</h1>
       <nav
@@ -507,6 +507,175 @@ contract VendingMachine {
               alt="Random iamge"
             />
           </div>
+        </div>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Кнопки</h3>
+        <div class="flex gap-8 flex-wrap">
+          <button
+            class="px-4 py-2 bg-[#3498db] rounded-md hover:scale-110 transition-transform ease-out"
+          >
+            Button
+          </button>
+          <button
+            class="px-4 py-2 bg-[#e74c3c] rounded-md hover:rotate-45 transition-transform ease-out"
+          >
+            Button
+          </button>
+          <button
+            class="px-4 py-2 bg-[#27ae60] rounded-md before:absolute before:w-full before:h-full before:top-0 before:left-0 before:z-10 before:rounded-md before:transition-transform before:ease-out relative hover:before:scale-y-100 before:scale-y-0 before:bg-[rgba(0,0,0,0.5)]"
+          >
+            Button
+          </button>
+          <button
+            class="px-4 py-2 bg-[#f1c40f] rounded-md before:absolute before:w-full before:h-full before:top-0 before:left-0 before:z-10 before:rounded-md before:transition-transform before:ease-out relative hover:before:scale-x-100 before:scale-x-0 before:bg-[rgba(0,0,0,0.5)]"
+          >
+            Button
+          </button>
+        </div>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Уведомления</h3>
+        <div class="group">
+          <div
+            class="bg-[#3b3b3b] inline-flex p-3 relative cursor-pointer rounded-[28px] group-hover:w-52 group-hover:bg-[#646cff] group-hover:rounded-t-[28px] group-hover:rounded-b-[0px]"
+          >
+            <div
+              class="absolute top-[-2px] right-[-2px] bg-red-800 rounded-full px-2 py-1 text-xs"
+            >
+              5
+            </div>
+            <svg
+              stroke="currentColor"
+              fill="rgba(255, 255, 255, 0.871)"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              height="2rem"
+              width="2rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 22a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22zm7-7.414V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v4.586l-1.707 1.707A.996.996 0 0 0 3 17v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1a.996.996 0 0 0-.293-.707L19 14.586z"
+              ></path>
+            </svg>
+          </div>
+          <div
+            class="group-hover:block hidden bg-white text-[#646cff] w-52 py-4 rounded-b-[28px]"
+          >
+            <ul>
+              <li
+                class="transition-all duration-250 list-item cursor-pointer py-2 rounded-lg bg-white group hover:scale-110 hover:bg-[#646cff] px-4 hover:text-white"
+              >
+                <span
+                  class="bg-[#646cff] rounded-full px-2 py-1 text-xs text-[#fff] mr-4"
+                  >1</span
+                >List item 1
+              </li>
+              <li
+                class="transition-all duration-250 list-item cursor-pointer py-2 rounded-lg bg-white group hover:scale-110 hover:bg-[#646cff] px-4 hover:text-white"
+              >
+                <span
+                  class="bg-[#646cff] rounded-full px-2 py-1 text-xs text-[#fff] mr-4"
+                  >2</span
+                >List item 2
+              </li>
+              <li
+                class="transition-all duration-250 list-item cursor-pointer py-2 rounded-lg bg-white group hover:scale-110 hover:bg-[#646cff] px-4 hover:text-white"
+              >
+                <span
+                  class="bg-[#646cff] rounded-full px-2 py-1 text-xs text-[#fff] mr-4"
+                  >3</span
+                >List item 3
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Карточки</h3>
+        <div class="flex justify-between lg:flex-row flex-col gap-28 w-full">
+          <div
+            class="overflow-hidden group before:transition-all before:duration-500 before:ease-out block flex-1 before:bg-transparent relative before:absolute before:top-0 before:left-0 hover:before:bg-gradient-to-t hover:before:from-[#646cff] hover:before:to-[rgba(100,108,255,0.56)] before:z-10 before:w-full before:h-full"
+          >
+            <div
+              class="absolute top-[100%] group-hover:top-0 w-full h-full transition-all duration-500 z-20 flex justify-end flex-col gap-4 p-8"
+            >
+              <h3 class="text-xl">Какая-то картинка</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+                incidunt rem quod
+              </p>
+              <button class="bg-white py-2 px-4 rounded-md text-[#646cff]">
+                Нажми меня
+              </button>
+            </div>
+            <img
+              class="w-full h-full"
+              src="https://images.unsplash.com/photo-1696075619158-3a70ee76b290?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80"
+              alt="Random img"
+            />
+          </div>
+          <div
+            class="overflow-hidden group before:transition-all before:duration-500 before:ease-out block flex-1 before:bg-transparent relative before:absolute before:top-0 before:left-0 hover:before:bg-gradient-to-t hover:before:from-[#646cff] hover:before:to-[rgba(100,108,255,0.56)] before:z-10 before:w-full before:h-full"
+          >
+            <div
+              class="absolute top-[100%] group-hover:top-0 w-full h-full transition-all duration-500 z-20 flex justify-end flex-col gap-4 p-8"
+            >
+              <h3 class="text-xl">Какая-то картинка</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+                incidunt rem quod
+              </p>
+              <button class="bg-white py-2 px-4 rounded-md text-[#646cff]">
+                Нажми меня
+              </button>
+            </div>
+            <img
+              class="w-full"
+              src="https://images.unsplash.com/photo-1696635101677-eae56a4a896c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNHx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80"
+              alt="Random img"
+            />
+          </div>
+          <div
+            class="overflow-hidden group before:transition-all before:duration-500 before:ease-out block flex-1 before:bg-transparent relative before:absolute before:top-0 before:left-0 hover:before:bg-gradient-to-t hover:before:from-[#646cff] hover:before:to-[rgba(100,108,255,0.56)] before:z-10 before:w-full before:h-full"
+          >
+            <div
+              class="absolute top-[100%] group-hover:top-0 w-full h-full transition-all duration-500 z-20 flex justify-end flex-col gap-4 p-8"
+            >
+              <h3 class="text-xl">Какая-то картинка</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+                incidunt rem quod
+              </p>
+              <button class="bg-white py-2 px-4 rounded-md text-[#646cff]">
+                Нажми меня
+              </button>
+            </div>
+            <img
+              class="w-full"
+              src="https://images.unsplash.com/photo-1696530858249-c84ad029ace1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D&w=1000&q=80"
+              alt="Random img"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Видео</h3>
+        <div class="relative group">
+          <div
+            class="w-full h-[80%] bg-[#646cff] p-28 absolute top-[10%] left-0 group-hover:opacity-100 group-hover:left-[-10%] opacity-0 z-50 transition-all ease-out duration-500"
+          >
+            <h3 class="text-3xl mb-8">Какое-то видео</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+              incidunt rem quod
+            </p>
+          </div>
+          <video
+            preload="auto"
+            autoplay
+            src="https://rr3---sn-jvhnu5g-c35d.googlevideo.com/videoplayback?expire=1697416639&ei=XzEsZZuBFaC_sfIP2ua8qAQ&ip=191.96.255.23&id=o-AJDvnt6HReqIt_i9l4TWM_LqKIumiC6Mh8zaGmSX8uOI&itag=336&source=youtube&requiressl=yes&spc=UWF9f7B-PA1NnOygXn3vKiOfjg6F9T8&vprv=1&svpuc=1&mime=video%2Fwebm&gir=yes&clen=1460663273&dur=721.883&lmt=1686264790018866&keepalive=yes&fexp=24007246,24350018&beids=24350018&c=ANDROID&txp=5532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=AGM4YrMwRQIgAZMRUakFviJ7tA1HEaik7MaAvec9YhkTBVNBIMPSOLMCIQCvQLKzmNK1_45D9L8TT2bD01HJgzC6UFIT58Th-n0zUg%3D%3D&redirect_counter=1&rm=sn-o09s77l&req_id=ad65f248942ca3ee&cms_redirect=yes&ipbypass=yes&mh=1V&mip=46.138.89.8&mm=31&mn=sn-jvhnu5g-c35d&ms=au&mt=1697406068&mv=m&mvi=3&pl=20&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AK1ks_kwRQIgE2FYAnzCEf9P-LA48tTCLBnyABR52VevrxEUXiLH9m4CIQDX7U58ZJZ_Rav6g2hj2HrzWXMwNn52MWuGo7QBqgKHBA%3D%3D"
+          ></video>
         </div>
       </section>
     </main>
