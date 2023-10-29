@@ -884,7 +884,9 @@ contract VendingMachine {
       </section>
       <section class="mb-12">
         <h3 class="text-3xl mb-8">Карточки</h3>
-        <div class="flex justify-between group transition-all ease-out gap-48">
+        <div
+          class="flex justify-between group transition-all ease-out gap-48 lg:flex-row flex-col"
+        >
           <div
             class="flex-1 lg:w-0 w-full bg-white rounded-xl overflow-hidden pb-8 group-hover:blur-sm hover:scale-110 transition-all ease-out unblur"
           >
@@ -931,7 +933,9 @@ contract VendingMachine {
       </section>
       <section class="mb-8">
         <h3 class="text-3xl mb-8">Ещё карточки 😫</h3>
-        <div class="flex justify-between group transition-all ease-out gap-48">
+        <div
+          class="flex justify-between group transition-all ease-out gap-48 lg:flex-row flex-col"
+        >
           <div
             class="flex-1 lg:w-0 w-full card-gradient py-24 px-12 card-gradient border-2 border-black relative overflow-hidden untranslate group-hover:opacity-25 transition-all ease-out before:content-['01']"
           >
@@ -994,7 +998,447 @@ contract VendingMachine {
           </div>
         </div>
       </section>
+
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Grid layout</h3>
+        <div
+          class="grid grid-cols-1 gap-4 grid-rows-12 h-screen md:grid-cols-2 lg:grid-cols-4"
+        >
+          <div class="header border-2 border-[#646cff] p-4 md:col-span-full">
+            header
+          </div>
+          <div
+            class="nav border-2 border-[#646cff] p-4 md:col-span-full lg:col-[2_/_4]"
+          >
+            nav
+          </div>
+          <div
+            class="main border-2 row-[span_7_/_span_7] border-[#646cff] p-4 md:row-[3_/_12] lg:col-[2_/_4]"
+          >
+            main
+          </div>
+          <div
+            class="sidebar border-2 border-[#646cff] p-4 md:col-[1_/_1] md:row-[3_/_12] lg:row-[2_/_12]"
+          >
+            sidebar
+          </div>
+          <div class="ads border-2 border-[#646cff] p-4 lg:row-[2_/_12]">
+            ads
+          </div>
+          <div
+            class="footer border-2 border-[#646cff] p-4 lg:row-[12_/_13] lg:col-span-full"
+          >
+            footer
+          </div>
+        </div>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Плитки</h3>
+        <div class="grid gap-4 grid-cols-4 grid-rows-3">
+          <div
+            class="col-span-2 bg-[#383838] p-4 hover:bg-[#e91e63] transition ease-out"
+          >
+            <div>
+              <svg
+                class="w-24 h-24 block mx-auto mb-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="800px"
+                height="800px"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <title>file_type_vite</title>
+                <path
+                  d="M29.8836 6.146L16.7418 29.6457c-.2714.4851-.9684.488-1.2439.0052L2.0956 6.1482c-.3-.5262.1498-1.1635.746-1.057l13.156 2.3516a.7144.7144 0 00.2537-.0004l12.8808-2.3478c.5942-.1083 1.0463.5241.7515 1.0513z"
+                  fill="url(#paint0_linear)"
+                />
+                <path
+                  d="M22.2644 2.0069l-9.7253 1.9056a.3571.3571 0 00-.2879.3294l-.5982 10.1038c-.014.238.2045.4227.4367.3691l2.7077-.6248c.2534-.0585.4823.1647.4302.4194l-.8044 3.9393c-.0542.265.1947.4918.4536.4132l1.6724-.5082c.2593-.0787.5084.1487.4536.414l-1.2784 6.1877c-.08.387.4348.598.6495.2662L16.5173 25 24.442 9.1848c.1327-.2648-.096-.5667-.387-.5106l-2.787.5379c-.262.0505-.4848-.1934-.4109-.4497l1.8191-6.306c.074-.2568-.1496-.5009-.4118-.4495z"
+                  fill="url(#paint1_linear)"
+                />
+                <defs id="defs50">
+                  <linearGradient
+                    id="paint0_linear"
+                    x1="6.0002"
+                    y1="32.9999"
+                    x2="235"
+                    y2="344"
+                    gradientUnits="userSpaceOnUse"
+                    gradientTransform="matrix(.07142 0 0 .07142 1.3398 1.8944)"
+                  >
+                    <stop stop-color="#41D1FF" id="stop38" />
+                    <stop offset="1" stop-color="#BD34FE" id="stop40" />
+                  </linearGradient>
+                  <linearGradient
+                    id="paint1_linear"
+                    x1="194.651"
+                    y1="8.8182"
+                    x2="236.076"
+                    y2="292.989"
+                    gradientUnits="userSpaceOnUse"
+                    gradientTransform="matrix(.07142 0 0 .07142 1.3398 1.8944)"
+                  >
+                    <stop stop-color="#FFEA83" id="stop43" />
+                    <stop offset=".0833" stop-color="#FFDD35" id="stop45" />
+                    <stop offset="1" stop-color="#FFA800" id="stop47" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <p class="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit
+              modi quo recusandae eius
+            </p>
+          </div>
+          <div
+            class="row-span-2 bg-[#383838] p-4 hover:bg-[#e91e63] transition ease-out"
+          >
+            <div>
+              <svg
+                class="w-24 h-24 block mx-auto mb-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="800px"
+                height="800px"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <path
+                  d="M18.6789 15.9759C18.6789 14.5415 17.4796 13.3785 16 13.3785C14.5206 13.3785 13.3211 14.5415 13.3211 15.9759C13.3211 17.4105 14.5206 18.5734 16 18.5734C17.4796 18.5734 18.6789 17.4105 18.6789 15.9759Z"
+                  fill="#53C1DE"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M24.7004 11.1537C25.2661 8.92478 25.9772 4.79148 23.4704 3.39016C20.9753 1.99495 17.7284 4.66843 16.0139 6.27318C14.3044 4.68442 10.9663 2.02237 8.46163 3.42814C5.96751 4.82803 6.73664 8.8928 7.3149 11.1357C4.98831 11.7764 1 13.1564 1 15.9759C1 18.7874 4.98416 20.2888 7.29698 20.9289C6.71658 23.1842 5.98596 27.1909 8.48327 28.5877C10.9973 29.9932 14.325 27.3945 16.0554 25.7722C17.7809 27.3864 20.9966 30.0021 23.4922 28.6014C25.9956 27.1963 25.3436 23.1184 24.7653 20.8625C27.0073 20.221 31 18.7523 31 15.9759C31 13.1835 26.9903 11.7923 24.7004 11.1537ZM24.4162 19.667C24.0365 18.5016 23.524 17.2623 22.8971 15.9821C23.4955 14.7321 23.9881 13.5088 24.3572 12.3509C26.0359 12.8228 29.7185 13.9013 29.7185 15.9759C29.7185 18.07 26.1846 19.1587 24.4162 19.667ZM22.85 27.526C20.988 28.571 18.2221 26.0696 16.9478 24.8809C17.7932 23.9844 18.638 22.9422 19.4625 21.7849C20.9129 21.6602 22.283 21.4562 23.5256 21.1777C23.9326 22.7734 24.7202 26.4763 22.85 27.526ZM9.12362 27.5111C7.26143 26.47 8.11258 22.8946 8.53957 21.2333C9.76834 21.4969 11.1286 21.6865 12.5824 21.8008C13.4123 22.9332 14.2816 23.9741 15.1576 24.8857C14.0753 25.9008 10.9945 28.557 9.12362 27.5111ZM2.28149 15.9759C2.28149 13.874 5.94207 12.8033 7.65904 12.3326C8.03451 13.5165 8.52695 14.7544 9.12123 16.0062C8.51925 17.2766 8.01977 18.5341 7.64085 19.732C6.00369 19.2776 2.28149 18.0791 2.28149 15.9759ZM9.1037 4.50354C10.9735 3.45416 13.8747 6.00983 15.1159 7.16013C14.2444 8.06754 13.3831 9.1006 12.5603 10.2265C11.1494 10.3533 9.79875 10.5569 8.55709 10.8297C8.09125 9.02071 7.23592 5.55179 9.1037 4.50354ZM20.3793 11.5771C21.3365 11.6942 22.2536 11.85 23.1147 12.0406C22.8562 12.844 22.534 13.6841 22.1545 14.5453C21.6044 13.5333 21.0139 12.5416 20.3793 11.5771ZM16.0143 8.0481C16.6054 8.66897 17.1974 9.3623 17.7798 10.1145C16.5985 10.0603 15.4153 10.0601 14.234 10.1137C14.8169 9.36848 15.414 8.67618 16.0143 8.0481ZM9.8565 14.5444C9.48329 13.6862 9.16398 12.8424 8.90322 12.0275C9.75918 11.8418 10.672 11.69 11.623 11.5748C10.9866 12.5372 10.3971 13.5285 9.8565 14.5444ZM11.6503 20.4657C10.6679 20.3594 9.74126 20.2153 8.88556 20.0347C9.15044 19.2055 9.47678 18.3435 9.85796 17.4668C10.406 18.4933 11.0045 19.4942 11.6503 20.4657ZM16.0498 23.9915C15.4424 23.356 14.8365 22.6531 14.2448 21.8971C15.4328 21.9423 16.6231 21.9424 17.811 21.891C17.2268 22.6608 16.6369 23.3647 16.0498 23.9915ZM22.1667 17.4222C22.5677 18.3084 22.9057 19.1657 23.1742 19.9809C22.3043 20.1734 21.3652 20.3284 20.3757 20.4435C21.015 19.4607 21.6149 18.4536 22.1667 17.4222ZM18.7473 20.5941C16.9301 20.72 15.1016 20.7186 13.2838 20.6044C12.2509 19.1415 11.3314 17.603 10.5377 16.0058C11.3276 14.4119 12.2404 12.8764 13.2684 11.4158C15.0875 11.2825 16.9178 11.2821 18.7369 11.4166C19.7561 12.8771 20.6675 14.4086 21.4757 15.9881C20.6771 17.5812 19.7595 19.1198 18.7473 20.5941ZM22.8303 4.4666C24.7006 5.51254 23.8681 9.22726 23.4595 10.8426C22.2149 10.5641 20.8633 10.3569 19.4483 10.2281C18.6239 9.09004 17.7698 8.05518 16.9124 7.15949C18.1695 5.98441 20.9781 3.43089 22.8303 4.4666Z"
+                  fill="#53C1DE"
+                />
+              </svg>
+            </div>
+            <p class="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit
+              modi quo recusandae eius
+            </p>
+          </div>
+          <div class="bg-[#383838] p-4 hover:bg-[#e91e63] transition ease-out">
+            <div>
+              <svg
+                class="w-24 h-24 block mx-auto mb-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="800px"
+                height="800px"
+                viewBox="0 -18 256 256"
+                preserveAspectRatio="xMinYMin meet"
+              >
+                <path
+                  d="M245.97 168.943c-13.662 7.121-84.434 36.22-99.501 44.075-15.067 7.856-23.437 7.78-35.34 2.09-11.902-5.69-87.216-36.112-100.783-42.597C3.566 169.271 0 166.535 0 163.951v-25.876s98.05-21.345 113.879-27.024c15.828-5.679 21.32-5.884 34.79-.95 13.472 4.936 94.018 19.468 107.331 24.344l-.006 25.51c.002 2.558-3.07 5.364-10.024 8.988"
+                  fill="#912626"
+                />
+                <path
+                  d="M245.965 143.22c-13.661 7.118-84.431 36.218-99.498 44.072-15.066 7.857-23.436 7.78-35.338 2.09-11.903-5.686-87.214-36.113-100.78-42.594-13.566-6.485-13.85-10.948-.524-16.166 13.326-5.22 88.224-34.605 104.055-40.284 15.828-5.677 21.319-5.884 34.789-.948 13.471 4.934 83.819 32.935 97.13 37.81 13.316 4.881 13.827 8.9.166 16.02"
+                  fill="#C6302B"
+                />
+                <path
+                  d="M245.97 127.074c-13.662 7.122-84.434 36.22-99.501 44.078-15.067 7.853-23.437 7.777-35.34 2.087-11.903-5.687-87.216-36.112-100.783-42.597C3.566 127.402 0 124.67 0 122.085V96.206s98.05-21.344 113.879-27.023c15.828-5.679 21.32-5.885 34.79-.95C162.142 73.168 242.688 87.697 256 92.574l-.006 25.513c.002 2.557-3.07 5.363-10.024 8.987"
+                  fill="#912626"
+                />
+                <path
+                  d="M245.965 101.351c-13.661 7.12-84.431 36.218-99.498 44.075-15.066 7.854-23.436 7.777-35.338 2.087-11.903-5.686-87.214-36.112-100.78-42.594-13.566-6.483-13.85-10.947-.524-16.167C23.151 83.535 98.05 54.148 113.88 48.47c15.828-5.678 21.319-5.884 34.789-.949 13.471 4.934 83.819 32.933 97.13 37.81 13.316 4.88 13.827 8.9.166 16.02"
+                  fill="#C6302B"
+                />
+                <path
+                  d="M245.97 83.653c-13.662 7.12-84.434 36.22-99.501 44.078-15.067 7.854-23.437 7.777-35.34 2.087-11.903-5.687-87.216-36.113-100.783-42.595C3.566 83.98 0 81.247 0 78.665v-25.88s98.05-21.343 113.879-27.021c15.828-5.68 21.32-5.884 34.79-.95C162.142 29.749 242.688 44.278 256 49.155l-.006 25.512c.002 2.555-3.07 5.361-10.024 8.986"
+                  fill="#912626"
+                />
+                <path
+                  d="M245.965 57.93c-13.661 7.12-84.431 36.22-99.498 44.074-15.066 7.854-23.436 7.777-35.338 2.09C99.227 98.404 23.915 67.98 10.35 61.497-3.217 55.015-3.5 50.55 9.825 45.331 23.151 40.113 98.05 10.73 113.88 5.05c15.828-5.679 21.319-5.883 34.789-.948 13.471 4.935 83.819 32.934 97.13 37.811 13.316 4.876 13.827 8.897.166 16.017"
+                  fill="#C6302B"
+                />
+                <path
+                  d="M159.283 32.757l-22.01 2.285-4.927 11.856-7.958-13.23-25.415-2.284 18.964-6.839-5.69-10.498 17.755 6.944 16.738-5.48-4.524 10.855 17.067 6.391M131.032 90.275L89.955 73.238l58.86-9.035-17.783 26.072M74.082 39.347c17.375 0 31.46 5.46 31.46 12.194 0 6.736-14.085 12.195-31.46 12.195s-31.46-5.46-31.46-12.195c0-6.734 14.085-12.194 31.46-12.194"
+                  fill="#FFF"
+                />
+                <path
+                  d="M185.295 35.998l34.836 13.766-34.806 13.753-.03-27.52"
+                  fill="#621B1C"
+                />
+                <path
+                  d="M146.755 51.243l38.54-15.245.03 27.519-3.779 1.478-34.791-13.752"
+                  fill="#9A2928"
+                />
+              </svg>
+            </div>
+            <p class="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit
+              modi quo recusandae eius
+            </p>
+          </div>
+          <div
+            class="bg-[#383838] p-4 hover:bg-[#e91e63] transition ease-out row-span-2"
+          >
+            <div>
+              <img
+                class="w-24 block mx-auto mb-4"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Openlogo-debianV2.svg/1200px-Openlogo-debianV2.svg.png"
+                alt="Debian logo"
+              />
+            </div>
+            <p class="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit
+              modi quo recusandae eius
+            </p>
+          </div>
+          <div class="bg-[#383838] p-4 hover:bg-[#e91e63] transition ease-out">
+            <div>
+              <img
+                class="w-24 block mx-auto mb-4"
+                src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png"
+                alt="Docker logo"
+              />
+            </div>
+            <p class="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit
+              modi quo recusandae eius
+            </p>
+          </div>
+          <div class="bg-[#383838] p-4 hover:bg-[#e91e63] transition ease-out">
+            <div>
+              <img
+                class="w-24 block mx-auto mb-4"
+                src="https://upload.wikimedia.org/wikipedia/commons/0/00/Kubernetes_%28container_engine%29.png"
+                alt="Kubernetes logo"
+              />
+            </div>
+            <p class="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit
+              modi quo recusandae eius
+            </p>
+          </div>
+          <div
+            class="bg-[#383838] p-4 hover:bg-[#e91e63] transition ease-out col-span-3"
+          >
+            <div>
+              <img
+                class="w-24 block mx-auto mb-4"
+                src="https://static-00.iconduck.com/assets.00/terraform-icon-1803x2048-hodrzd3t.png"
+                alt="Terraform logo"
+              />
+            </div>
+            <p class="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit
+              modi quo recusandae eius
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Контактная форма</h3>
+        <form class="grid grid-cols-2 gap-8">
+          <div class="relative z-0 col-span-full md:col-span-1">
+            <input
+              type="text"
+              id="floating_standard"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#646cff] focus:outline-none focus:ring-0 focus:border-[##646cff] peer"
+              placeholder=""
+            />
+            <label
+              for="floating_standard"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#646cff] peer-focus:dark:text-[#646cff] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >First Name</label
+            >
+          </div>
+          <div class="relative z-0 col-span-full md:col-span-1">
+            <input
+              type="text"
+              id="floating_standard"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#646cff] focus:outline-none focus:ring-0 focus:border-[##646cff] peer"
+              placeholder=""
+            />
+            <label
+              for="floating_standard"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#646cff] peer-focus:dark:text-[#646cff] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >Last Name</label
+            >
+          </div>
+          <div class="relative z-0 col-span-full md:col-span-1">
+            <input
+              type="email"
+              id="floating_standard"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#646cff] focus:outline-none focus:ring-0 focus:border-[##646cff] peer"
+              placeholder=""
+            />
+            <label
+              for="floating_standard"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#646cff] peer-focus:dark:text-[#646cff] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >Email</label
+            >
+          </div>
+          <div class="relative z-0 col-span-full md:col-span-1">
+            <input
+              type="tel"
+              id="floating_standard"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#646cff] focus:outline-none focus:ring-0 focus:border-[##646cff] peer"
+              placeholder=""
+            />
+            <label
+              for="floating_standard"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#646cff] peer-focus:dark:text-[#646cff] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >Phone number</label
+            >
+          </div>
+          <div class="relative z-0 col-span-full">
+            <input
+              type="text"
+              id="floating_standard"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#646cff] focus:outline-none focus:ring-0 focus:border-[##646cff] peer"
+              placeholder=""
+            />
+            <label
+              for="floating_standard"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#646cff] peer-focus:dark:text-[#646cff] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >Your message</label
+            >
+          </div>
+          <button class="w-fit bg-[#646cff] py-2 px-6" type="submit">
+            Send
+          </button>
+        </form>
+      </section>
+      <section class="mb-8">
+        <div class="p-4 gap-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="group">
+            <h3
+              class="text-2xl mb-4 relative after:absolute after:w-10 after:h-[2px] after:bg-[#646cff] after:-bottom-2 after:left-0 after:group-hover:w-16 after:transition-all after:ease-out"
+            >
+              About Us
+            </h3>
+            <p class="mb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+              sapiente, a incidunt maiores quos harum. Voluptatum enim expedita
+              quasi architecto hic, eos accusantium! Harum rem odit quis
+              blanditiis unde error.
+            </p>
+            <div class="flex gap-4 flex-wrap">
+              <div class="text-3xl p-4 bg-[#353535] cursor-pointer">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 1024 1024"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M941.3 296.1a112.3 112.3 0 0 0-79.2-79.3C792.2 198 512 198 512 198s-280.2 0-350.1 18.7A112.12 112.12 0 0 0 82.7 296C64 366 64 512 64 512s0 146 18.7 215.9c10.3 38.6 40.7 69 79.2 79.3C231.8 826 512 826 512 826s280.2 0 350.1-18.8c38.6-10.3 68.9-40.7 79.2-79.3C960 658 960 512 960 512s0-146-18.7-215.9zM423 646V378l232 133-232 135z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-3xl p-4 bg-[#353535] cursor-pointer">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 1024 1024"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M941.3 296.1a112.3 112.3 0 0 0-79.2-79.3C792.2 198 512 198 512 198s-280.2 0-350.1 18.7A112.12 112.12 0 0 0 82.7 296C64 366 64 512 64 512s0 146 18.7 215.9c10.3 38.6 40.7 69 79.2 79.3C231.8 826 512 826 512 826s280.2 0 350.1-18.8c38.6-10.3 68.9-40.7 79.2-79.3C960 658 960 512 960 512s0-146-18.7-215.9zM423 646V378l232 133-232 135z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-3xl p-4 bg-[#353535] cursor-pointer">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 1024 1024"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M941.3 296.1a112.3 112.3 0 0 0-79.2-79.3C792.2 198 512 198 512 198s-280.2 0-350.1 18.7A112.12 112.12 0 0 0 82.7 296C64 366 64 512 64 512s0 146 18.7 215.9c10.3 38.6 40.7 69 79.2 79.3C231.8 826 512 826 512 826s280.2 0 350.1-18.8c38.6-10.3 68.9-40.7 79.2-79.3C960 658 960 512 960 512s0-146-18.7-215.9zM423 646V378l232 133-232 135z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="group">
+            <h3
+              class="relative text-2xl mb-4 after:absolute after:w-10 after:h-[2px] after:bg-[#646cff] after:-bottom-2 after:left-0 after:group-hover:w-16 after:transition-all after:ease-out"
+            >
+              Quick links
+            </h3>
+            <ul>
+              <li>Some link 1</li>
+              <li>Some link 2</li>
+              <li>Some link 3</li>
+              <li>Some link 4</li>
+              <li>Some link 5</li>
+            </ul>
+          </div>
+          <div class="group">
+            <h3
+              class="relative text-2xl mb-4 after:absolute after:w-10 after:h-[2px] after:bg-[#646cff] after:-bottom-2 after:left-0 after:group-hover:w-16 after:transition-all after:ease-out"
+            >
+              Shop
+            </h3>
+            <ul>
+              <li>Some product 1</li>
+              <li>Some product 2</li>
+              <li>Some product 3</li>
+            </ul>
+          </div>
+          <div class="group">
+            <h3
+              class="relative text-2xl mb-4 after:absolute after:w-10 after:h-[2px] after:bg-[#646cff] after:-bottom-2 after:left-0 after:group-hover:w-16 after:transition-all after:ease-out"
+            >
+              Shop
+            </h3>
+
+            <div class="flex gap-2 items-start mb-2">
+              <div class="text-2xl">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 16 16"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+                  ></path>
+                </svg>
+              </div>
+              <div>4023 Charise Forges, Changchester, CA 73710-4249</div>
+            </div>
+            <div class="flex gap-2 items-start">
+              <div class="text-2xl">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 1024 1024"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M885.6 230.2L779.1 123.8a80.83 80.83 0 0 0-57.3-23.8c-21.7 0-42.1 8.5-57.4 23.8L549.8 238.4a80.83 80.83 0 0 0-23.8 57.3c0 21.7 8.5 42.1 23.8 57.4l83.8 83.8A393.82 393.82 0 0 1 553.1 553 395.34 395.34 0 0 1 437 633.8L353.2 550a80.83 80.83 0 0 0-57.3-23.8c-21.7 0-42.1 8.5-57.4 23.8L123.8 664.5a80.89 80.89 0 0 0-23.8 57.4c0 21.7 8.5 42.1 23.8 57.4l106.3 106.3c24.4 24.5 58.1 38.4 92.7 38.4 7.3 0 14.3-.6 21.2-1.8 134.8-22.2 268.5-93.9 376.4-201.7C828.2 612.8 899.8 479.2 922.3 344c6.8-41.3-6.9-83.8-36.7-113.8z"
+                  ></path>
+                </svg>
+              </div>
+              <div>+17706954728</div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
     <footer
       class="container mx-auto px-4 mb-12 flex justify-between items-center"
     >
