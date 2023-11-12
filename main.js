@@ -117,3 +117,91 @@ menu.addEventListener("change", (e) => {
     navbar.classList.remove("visible");
   }
 });
+
+const captchaText = document.getElementById("captcha-text");
+
+const generateCaptcha = (length) => {
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let randomString = "";
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    randomString += characters[randomIndex];
+  }
+
+  return randomString;
+};
+
+captchaText.textContent = generateCaptcha(8);
+
+const captchaForm = document.getElementById("captcha-form");
+const captchaInput = document.getElementById("captcha-input");
+
+let attempt = 0;
+
+captchaForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (attempt === 1) {
+    const values = captchaText.textContent.replaceAll(" ", "").split("+");
+    if (
+      (parseInt(values[0]) + parseInt(values[1])).toString() ===
+      captchaInput.value
+    ) {
+      return alert("Успешно!");
+    } else {
+      return alert("Неверная каптча!");
+    }
+  }
+  if (captchaInput.value !== captchaText.textContent && attempt === 0) {
+    attempt += 1;
+    return (captchaText.textContent =
+      Math.floor(Math.random() * 100).toString() +
+      " + " +
+      Math.floor(Math.random() * 100).toString());
+  }
+  if (captchaInput.value === captchaText.textContent && attempt === 0) {
+    return alert("Успешно!");
+  }
+});
+
+class Cart {
+  read = () => {
+    const userInput = parseFloat(prompt("Введите число:"));
+    if (!isNaN(userInput)) {
+      this.value += userInput;
+    } else {
+      alert("Вы ввели некорректное число. Попробуйте еще раз.");
+    }
+  };
+
+  constructor(startingValue) {
+    this.value = startingValue;
+  }
+}
+
+const createCart = document.getElementById("create-cart");
+const modifyCart = document.getElementById("modify-cart");
+const valueCart = document.getElementById("value-cart");
+
+let cart;
+
+createCart.addEventListener("click", () => {
+  cart = new Cart(0);
+  valueCart.textContent = cart.value;
+});
+
+modifyCart.addEventListener("click", () => {
+  cart.read();
+  valueCart.textContent = cart.value;
+});
+
+const truncateText = document.getElementById("truncateText");
+
+const truncate = (text) => {
+  return text.length > 10 ? text.substring(0, 10) + "..." : text;
+};
+
+for (let element of truncateText.getElementsByTagName("h3")) {
+  element.innerText = truncate(element.innerText);
+}

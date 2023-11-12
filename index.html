@@ -682,6 +682,7 @@ contract VendingMachine {
         <h3 class="text-3xl mb-8">Glassmorphism</h3>
         <div
           class="flex justify-between items-center flex-col lg:flex-row gap-24"
+          id="truncateText"
         >
           <div
             class="flex-1 flex w-full lg:w-0 items-center justify-between relative py-28 group"
@@ -696,7 +697,7 @@ contract VendingMachine {
               class="before:rounded-lg before:left-[15%] before:from-[#ffc800] before:to-[#ff0000] before:w-[50%] before:h-[100%] before:absolute before:top-0 before:bg-gradient-to-br after:bg-gradient-to-br before:skew-x-[10deg] after:absolute after:w-[50%] after:h-[100%] after:left-[15%] after:backdrop-blur-lg after:top-0 after:skew-x-[10deg] after:from-[#ffc800] after:to-[#ff0000] after:blur-md after:-z-10 before:group-hover:skew-x-0 after:group-hover:skew-x-0 before:transition-transform before:ease-out afterafter:transition-transform after:ease-out"
             >
               <div class="px-6 py-8 glass-effect w-[80%] rounded-lg">
-                <h3 class="text-xl mb-2">Заголовок</h3>
+                <h3 class="text-xl mb-2">12345678999</h3>
                 <p class="mb-2">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
                   esse quis facilis error, fugit officia culpa enim
@@ -744,7 +745,7 @@ contract VendingMachine {
               class="before:rounded-lg before:left-[15%] before:from-[#00c3ff] before:to-[#04ff00] before:w-[50%] before:h-[100%] before:absolute before:top-0 before:bg-gradient-to-br after:bg-gradient-to-br before:skew-x-[10deg] after:absolute after:w-[50%] after:h-[100%] after:left-[15%] after:backdrop-blur-lg after:top-0 after:skew-x-[10deg] after:from-[#00c3ff] after:to-[#04ff00] after:blur-md after:-z-10 before:group-hover:skew-x-0 after:group-hover:skew-x-0 before:transition-transform before:ease-out afterafter:transition-transform after:ease-out"
             >
               <div class="px-6 py-8 glass-effect w-[80%] rounded-lg">
-                <h3 class="text-xl mb-2">Заголовок</h3>
+                <h3 class="text-xl mb-2">Asdfghjktuio</h3>
                 <p class="mb-2">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
                   esse quis facilis error, fugit officia culpa enim
@@ -1465,6 +1466,48 @@ contract VendingMachine {
           <button class="py-2 px-4 bg-[#383838]" id="buttonFollow">
             Нравиться
           </button>
+        </div>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Капча</h3>
+        <div>
+          <form class="w-full max-w-sm" id="captcha-form">
+            <label for="captcha-input" class="block mb-4">Введите каптчу</label>
+            <div
+              class="mb-4 p-2 border-2 border-[#646cff] select-none"
+              id="captcha-text"
+            ></div>
+            <input
+              type="text"
+              id="captcha-input"
+              name="captcha-input"
+              class="block px-4 py-1 outline-none ring-[#646cff] focus:ring-2 w-full mb-4"
+            />
+            <button
+              type="submit"
+              class="bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2"
+            >
+              Отправить
+            </button>
+          </form>
+        </div>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Корзина</h3>
+        <div>
+          <button
+            id="create-cart"
+            class="bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2"
+          >
+            Создать корзину
+          </button>
+          <button
+            id="modify-cart"
+            class="bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 mb-4"
+          >
+            Считать значение
+          </button>
+          <p id="value-cart" class="p-2">0</p>
         </div>
       </section>
     </main>
