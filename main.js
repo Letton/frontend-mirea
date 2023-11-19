@@ -59,7 +59,6 @@ loginButton2.addEventListener("click", () => {
 });
 
 likeButton.addEventListener("click", () => {
-  console.log(likeButton.style.color);
   if (likeButton.style.color == "") {
     return (likeButton.style.color = "rgb(233, 30, 99)");
   }
@@ -129,7 +128,7 @@ const generateCaptcha = (length) => {
     const randomIndex = Math.floor(Math.random() * characters.length);
     randomString += characters[randomIndex];
   }
-
+  
   return randomString;
 };
 
@@ -205,3 +204,93 @@ const truncate = (text) => {
 for (let element of truncateText.getElementsByTagName("h3")) {
   element.innerText = truncate(element.innerText);
 }
+
+let cartItems = [];
+
+const updateQuantity = (id, quantity) => {
+  let itemIndex = cartItems.findIndex(({ productId }) => productId == parseFloat(id));
+  cartItems[itemIndex].quantity = quantity;
+  if (cartItems[itemIndex].quantity === 0) {
+    cartItems.splice(itemIndex, 1);
+  }
+  updateCart()
+}
+
+let sortOption = true;
+
+const sortByPrice = () => {
+  cartItems = cartItems.sort((a, b) => sortOption ? (a.productPrice * a.quantity) - (b.productPrice * b.quantity) : (b.productPrice * b.quantity) - (a.productPrice * a.quantity));
+  sortOption = !sortOption;
+  updateCart();
+}
+
+const updateCart = () => {
+  const shoppingCart = document.querySelector('.shopping-cart');
+  if (cartItems.length > 0) {
+    shoppingCart.innerHTML = `
+    <button class="sort-by-price bg-[#646cff] py-2 px-4 ">Сортировать по цене</button>
+    <ul class="mb-2"></ul>
+    <div class="total-price text-xl text-right px-4"></div>
+    `;
+    const sortByPriceButton = shoppingCart.querySelector(".sort-by-price");
+    sortByPriceButton.addEventListener("click", sortByPrice);
+    let totalPrice = 0;
+    const shoppingCartUl = shoppingCart.querySelector("ul");
+    cartItems.forEach(({productId, productTitle, productPrice, quantity}) => {
+      const newItem = document.createElement('li');
+      newItem.innerHTML = `
+        <li class="flex border-b-2 border-[#383838] py-12 px-4 justify-between  ">
+          <h4 class="text-xl">${productTitle}</h4>
+          <div class="flex gap-2 items-center">
+            <button class="btn-minus w-5 h-5 rounded-full bg-[#646cff] leading-[20px]">-</button>
+            <span>${quantity}</span>
+            <button class="btn-plus w-5 h-5 rounded-full bg-[#646cff] leading-[20px]">+</button>
+          </div>
+          <span>
+            $${quantity * productPrice}
+          </span>
+          <button class="btn-clear">
+            ✕
+          </button>
+        </li>
+      `;
+      totalPrice += quantity * productPrice;
+      newItem.querySelector('.btn-plus').addEventListener("click", () => updateQuantity(productId, quantity + 1))
+      newItem.querySelector('.btn-minus').addEventListener("click", () => updateQuantity(productId, quantity - 1))
+      newItem.querySelector('.btn-clear').addEventListener("click", () => updateQuantity(productId, 0))
+      shoppingCartUl.appendChild(newItem);
+    });
+    shoppingCart.querySelector(".total-price").textContent = `Итого: $${totalPrice}`;
+  } else {
+    shoppingCart.innerHTML = `
+      <div class="text-xl px-4">Ваша корзина пуста</div>
+    `;
+  }
+}
+
+
+
+const addToCart = (id, title, price) => {
+  let itemIndex = cartItems.findIndex(({ productId }) => productId == parseFloat(id));
+  if (itemIndex != -1) 
+    cartItems[itemIndex].quantity += 1;
+  else 
+    cartItems.push({productId: parseInt(id), productTitle: title, productPrice: parseFloat(price), quantity: 1})
+  updateCart()
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const products = document.querySelectorAll('.product');
+  const cartItemsElement = document.getElementById('cart-items');
+
+  products.forEach(product => {
+    const addToCartButton = product.querySelector('.add-to-cart');
+    const productId = product.dataset.id;
+    const productTitle = product.dataset.title;
+    const productPrice = product.dataset.price;
+    addToCartButton.addEventListener('click', () => {
+      addToCart(productId, productTitle, productPrice);
+    });
+  });
+});
