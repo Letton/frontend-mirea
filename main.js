@@ -128,7 +128,7 @@ const generateCaptcha = (length) => {
     const randomIndex = Math.floor(Math.random() * characters.length);
     randomString += characters[randomIndex];
   }
-  
+
   return randomString;
 };
 
@@ -208,24 +208,30 @@ for (let element of truncateText.getElementsByTagName("h3")) {
 let cartItems = [];
 
 const updateQuantity = (id, quantity) => {
-  let itemIndex = cartItems.findIndex(({ productId }) => productId == parseFloat(id));
+  let itemIndex = cartItems.findIndex(
+    ({ productId }) => productId == parseFloat(id)
+  );
   cartItems[itemIndex].quantity = quantity;
   if (cartItems[itemIndex].quantity === 0) {
     cartItems.splice(itemIndex, 1);
   }
-  updateCart()
-}
+  updateCart();
+};
 
 let sortOption = true;
 
 const sortByPrice = () => {
-  cartItems = cartItems.sort((a, b) => sortOption ? (a.productPrice * a.quantity) - (b.productPrice * b.quantity) : (b.productPrice * b.quantity) - (a.productPrice * a.quantity));
+  cartItems = cartItems.sort((a, b) =>
+    sortOption
+      ? a.productPrice * a.quantity - b.productPrice * b.quantity
+      : b.productPrice * b.quantity - a.productPrice * a.quantity
+  );
   sortOption = !sortOption;
   updateCart();
-}
+};
 
 const updateCart = () => {
-  const shoppingCart = document.querySelector('.shopping-cart');
+  const shoppingCart = document.querySelector(".shopping-cart");
   if (cartItems.length > 0) {
     shoppingCart.innerHTML = `
     <button class="sort-by-price bg-[#646cff] py-2 px-4 ">Сортировать по цене</button>
@@ -236,8 +242,8 @@ const updateCart = () => {
     sortByPriceButton.addEventListener("click", sortByPrice);
     let totalPrice = 0;
     const shoppingCartUl = shoppingCart.querySelector("ul");
-    cartItems.forEach(({productId, productTitle, productPrice, quantity}) => {
-      const newItem = document.createElement('li');
+    cartItems.forEach(({ productId, productTitle, productPrice, quantity }) => {
+      const newItem = document.createElement("li");
       newItem.innerHTML = `
         <li class="flex border-b-2 border-[#383838] py-12 px-4 justify-between  ">
           <h4 class="text-xl">${productTitle}</h4>
@@ -255,42 +261,113 @@ const updateCart = () => {
         </li>
       `;
       totalPrice += quantity * productPrice;
-      newItem.querySelector('.btn-plus').addEventListener("click", () => updateQuantity(productId, quantity + 1))
-      newItem.querySelector('.btn-minus').addEventListener("click", () => updateQuantity(productId, quantity - 1))
-      newItem.querySelector('.btn-clear').addEventListener("click", () => updateQuantity(productId, 0))
+      newItem
+        .querySelector(".btn-plus")
+        .addEventListener("click", () =>
+          updateQuantity(productId, quantity + 1)
+        );
+      newItem
+        .querySelector(".btn-minus")
+        .addEventListener("click", () =>
+          updateQuantity(productId, quantity - 1)
+        );
+      newItem
+        .querySelector(".btn-clear")
+        .addEventListener("click", () => updateQuantity(productId, 0));
       shoppingCartUl.appendChild(newItem);
     });
-    shoppingCart.querySelector(".total-price").textContent = `Итого: $${totalPrice}`;
+    shoppingCart.querySelector(
+      ".total-price"
+    ).textContent = `Итого: $${totalPrice}`;
   } else {
     shoppingCart.innerHTML = `
       <div class="text-xl px-4">Ваша корзина пуста</div>
     `;
   }
-}
-
-
+};
 
 const addToCart = (id, title, price) => {
-  let itemIndex = cartItems.findIndex(({ productId }) => productId == parseFloat(id));
-  if (itemIndex != -1) 
-    cartItems[itemIndex].quantity += 1;
-  else 
-    cartItems.push({productId: parseInt(id), productTitle: title, productPrice: parseFloat(price), quantity: 1})
-  updateCart()
-}
+  let itemIndex = cartItems.findIndex(
+    ({ productId }) => productId == parseFloat(id)
+  );
+  if (itemIndex != -1) cartItems[itemIndex].quantity += 1;
+  else
+    cartItems.push({
+      productId: parseInt(id),
+      productTitle: title,
+      productPrice: parseFloat(price),
+      quantity: 1,
+    });
+  updateCart();
+};
 
+document.addEventListener("DOMContentLoaded", () => {
+  const products = document.querySelectorAll(".product");
+  const cartItemsElement = document.getElementById("cart-items");
 
-document.addEventListener('DOMContentLoaded', () => {
-  const products = document.querySelectorAll('.product');
-  const cartItemsElement = document.getElementById('cart-items');
-
-  products.forEach(product => {
-    const addToCartButton = product.querySelector('.add-to-cart');
+  products.forEach((product) => {
+    const addToCartButton = product.querySelector(".add-to-cart");
     const productId = product.dataset.id;
     const productTitle = product.dataset.title;
     const productPrice = product.dataset.price;
-    addToCartButton.addEventListener('click', () => {
+    addToCartButton.addEventListener("click", () => {
       addToCart(productId, productTitle, productPrice);
     });
   });
 });
+
+const notificationsCounter = document.querySelector(".notifications-counter");
+const notificationsButton = document.querySelector(".notifications-button");
+
+let isCounterRunning = true;
+
+notificationsButton.addEventListener("click", () => {
+  isCounterRunning = false;
+  let delayTimer = setTimeout(() => (isCounterRunning = true), 2000);
+});
+
+const increaseValue = () => {
+  notificationsCounter.textContent =
+    parseInt(notificationsCounter.textContent) + 1;
+};
+
+const increaseValueDecorator = (increaseValue) => {
+  if (isCounterRunning) {
+    increaseValue();
+  }
+};
+
+setInterval(increaseValueDecorator, 500, increaseValue);
+
+const itemsList = document.getElementById("items-list");
+
+const addItemToList = document.getElementById("add-item-to-list");
+
+addItemToList.addEventListener("click", async () => {
+  let data = prompt("Введите элемент");
+  while (data !== "" && data !== null) {
+    console.log(data);
+    const liNode = document.createElement("li");
+    liNode.textContent = data;
+    itemsList.appendChild(liNode);
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    data = prompt("Введите элемент");
+  }
+});
+
+const showNotification = ({ delay, text }) => {
+  let notification = document.querySelector(".notification");
+
+  notification.classList.add("show");
+  notification.textContent = text;
+
+  setTimeout(() => {
+    notification.classList.remove("show");
+  }, delay);
+};
+
+const showNotificationButton = document.getElementById("show-notification");
+
+showNotificationButton.addEventListener("click", () =>
+  showNotification({ delay: 3000, text: "Hello!" })
+);

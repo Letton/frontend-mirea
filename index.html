@@ -538,10 +538,10 @@ contract VendingMachine {
         <h3 class="text-3xl mb-8">Уведомления</h3>
         <div class="group">
           <div
-            class="bg-[#3b3b3b] inline-flex p-3 relative cursor-pointer rounded-[28px] group-hover:w-52 group-hover:bg-[#646cff] group-hover:rounded-t-[28px] group-hover:rounded-b-[0px]"
+            class="notifications-button bg-[#3b3b3b] inline-flex p-3 relative cursor-pointer rounded-[28px] group-hover:w-52 group-hover:bg-[#646cff] group-hover:rounded-t-[28px] group-hover:rounded-b-[0px]"
           >
             <div
-              class="absolute top-[-2px] right-[-2px] bg-red-800 rounded-full px-2 py-1 text-xs"
+              class="absolute top-[-2px] right-[-2px] bg-red-800 rounded-full px-2 py-1 text-xs notifications-counter"
             >
               5
             </div>
@@ -1512,57 +1512,121 @@ contract VendingMachine {
       </section>
       <section class="mb-8">
         <h3 class="text-3xl mb-8">Магазин</h3>
-        <div class="grid grid-cols-[minmax(0,_320px)_minmax(0,_320px)_minmax(0,_320px)] gap-8 justify-around products" >
-          <div class="product bg-[#383838] p-8 w-sm" data-id="1" data-price="150" data-title="Товар 1">
-            <h4 class="text-center mb-4 text-2xl">
-              Товар 1
-            </h4>
+        <div
+          class="grid grid-cols-[minmax(0,_320px)_minmax(0,_320px)_minmax(0,_320px)] gap-8 justify-around products"
+        >
+          <div
+            class="product bg-[#383838] p-8 w-sm"
+            data-id="1"
+            data-price="150"
+            data-title="Товар 1"
+          >
+            <h4 class="text-center mb-4 text-2xl">Товар 1</h4>
             <p class="text-xl text-center mb-2">$150</p>
-            <button class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 w-full">Купить</button>
+            <button
+              class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 w-full"
+            >
+              Купить
+            </button>
           </div>
-          <div class="product bg-[#383838] p-8 w-sm" data-id="2" data-price="99" data-title="Товар 2">
-            <h4 class="text-center mb-4 text-2xl">
-              Товар 2
-            </h4>
+          <div
+            class="product bg-[#383838] p-8 w-sm"
+            data-id="2"
+            data-price="99"
+            data-title="Товар 2"
+          >
+            <h4 class="text-center mb-4 text-2xl">Товар 2</h4>
             <p class="text-xl text-center mb-2">$99</p>
-            <button class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 w-full">Купить</button>
+            <button
+              class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 w-full"
+            >
+              Купить
+            </button>
           </div>
-          <div class="product bg-[#383838] p-8 w-sm" data-id="3" data-price="150" data-title="Товар 3">
-            <h4 class="text-center mb-4 text-2xl">
-              Товар 3
-            </h4>
+          <div
+            class="product bg-[#383838] p-8 w-sm"
+            data-id="3"
+            data-price="150"
+            data-title="Товар 3"
+          >
+            <h4 class="text-center mb-4 text-2xl">Товар 3</h4>
             <p class="text-xl text-center mb-2">$150</p>
-            <button class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 w-full">Купить</button>
-          </div> 
-          <div class="product bg-[#383838] p-8 w-sm" data-id="4" data-price="150" data-title="Товар 4">
-            <h4 class="text-center mb-4 text-2xl">
-              Товар 4
-            </h4>
-            <p class="text-xl text-center mb-2">$150</p>
-            <button class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 w-full">Купить</button>
+            <button
+              class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 w-full"
+            >
+              Купить
+            </button>
           </div>
-          <div class="product bg-[#383838] p-8 w-sm" data-id="5" data-price="199" data-title="Товар 5">
-            <h4 class="text-center mb-4 text-2xl">
-              Товар 5
-            </h4>
+          <div
+            class="product bg-[#383838] p-8 w-sm"
+            data-id="4"
+            data-price="150"
+            data-title="Товар 4"
+          >
+            <h4 class="text-center mb-4 text-2xl">Товар 4</h4>
+            <p class="text-xl text-center mb-2">$150</p>
+            <button
+              class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 w-full"
+            >
+              Купить
+            </button>
+          </div>
+          <div
+            class="product bg-[#383838] p-8 w-sm"
+            data-id="5"
+            data-price="199"
+            data-title="Товар 5"
+          >
+            <h4 class="text-center mb-4 text-2xl">Товар 5</h4>
             <p class="text-xl text-center mb-2">$199</p>
-            <button class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 w-full">Купить</button>
+            <button
+              class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 w-full"
+            >
+              Купить
+            </button>
           </div>
-          <div class="product bg-[#383838] p-8 w-sm" data-id="6" data-price="249" data-title="Товар 6">
-            <h4 class="text-center mb-4 text-2xl">
-              Товар 6
-            </h4>
+          <div
+            class="product bg-[#383838] p-8 w-sm"
+            data-id="6"
+            data-price="249"
+            data-title="Товар 6"
+          >
+            <h4 class="text-center mb-4 text-2xl">Товар 6</h4>
             <p class="text-xl text-center mb-2">$249</p>
-            <button class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 w-full">Купить</button>
+            <button
+              class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 w-full"
+            >
+              Купить
+            </button>
           </div>
         </div>
       </section>
-      <section>
+      <section class="mb-8">
         <h3 class="text-3xl mb-8">Корзина</h3>
         <div class="shopping-cart">
           <div class="text-xl px-4">Ваша корзина пуста</div>
         </div>
       </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Список</h3>
+        <button
+          id="add-item-to-list"
+          class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 mb-4"
+        >
+          Добавить элементы
+        </button>
+        <ul id="items-list"></ul>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Уведомление</h3>
+        <button
+          id="show-notification"
+          class="add-to-cart bg-[#646cff] outline-none ring-[#9298ff] focus:ring-2 px-4 py-2 mb-4"
+        >
+          Покзать уведомление
+        </button>
+      </section>
+      <div class="notification"></div>
     </main>
 
     <footer
