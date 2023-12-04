@@ -251,8 +251,8 @@
   top: 150px; 
   &.show {
     visibility: visible; 
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 5s ease-out;
+    animation: fadein 0.5s, fadeout 0.5s 5.5s ease-out;
   }
 }
 
@@ -274,4 +274,20 @@
 @keyframes fadeout {
   from {top: 150px; opacity: 1;}
   to {top: 0; opacity: 0;}
+}
+
+.onscroll {
+  transition: 0.5s ease-out;
+  &:nth-child(even) {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  &:nth-child(odd) {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  &.show {
+    opacity: 1;
+    transform: translateX(0);
+  } 
 }

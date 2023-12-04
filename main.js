@@ -104,8 +104,8 @@ scrollToTopBtn.addEventListener("click", () => {
   });
 });
 
-let observer = new IntersectionObserver(callback);
-observer.observe(target);
+let observer_up = new IntersectionObserver(callback);
+observer_up.observe(target);
 
 const menu = document.getElementById("menu");
 const navbar = document.querySelector(".navbar");
@@ -358,16 +358,77 @@ addItemToList.addEventListener("click", async () => {
 const showNotification = ({ delay, text }) => {
   let notification = document.querySelector(".notification");
 
-  notification.classList.add("show");
-  notification.textContent = text;
-
-  setTimeout(() => {
+  const timeout = setTimeout(() => {
     notification.classList.remove("show");
   }, delay);
+
+  notification.addEventListener("click", (e) => {
+    console.log(e.currentTarget);
+    if (e.target.tagName === "BUTTON" && e.target.closest(".notification")) {
+      notification.classList.remove("show");
+      clearTimeout(timeout);
+    }
+  });
+  notification.classList.add("show");
+  notification.children[0].textContent = text;
 };
 
 const showNotificationButton = document.getElementById("show-notification");
 
 showNotificationButton.addEventListener("click", () =>
-  showNotification({ delay: 3000, text: "Hello!" })
+  showNotification({ delay: 6000, text: "Hello!" })
 );
+
+const centerImage = () => {
+  const image = document.getElementById("centered-image");
+
+  const halfContainerWidth =
+    image.parentElement.offsetWidth / 2 - image.offsetWidth / 2;
+  const halfContainerHeight =
+    image.parentElement.offsetHeight / 2 - image.offsetHeight / 2;
+
+  image.style.left = `${halfContainerWidth}px`;
+  image.style.top = `${halfContainerHeight}px`;
+};
+
+centerImage();
+
+window.addEventListener("resize", centerImage);
+
+document.addEventListener("click", (e) =>
+  console.log(`Координаты нажатия: ${e.pageX}, ${e.pageY}`)
+);
+
+window.addEventListener("scroll", (e) => {
+  const parallaxImagesContainer = document.querySelector(".parallax");
+  Array.from(parallaxImagesContainer.children).forEach((el) => {
+    const coords = parallaxImagesContainer.getBoundingClientRect();
+    if (el.dataset?.speedx && el.dataset?.speedy && coords.y < 200) {
+      el.style.top = `${
+        (coords.y - 200) * -1 * parseFloat(el.dataset?.speedy)
+      }px`;
+      el.style.left = `${
+        (coords.y - 200) * -1 * parseFloat(el.dataset?.speedx)
+      }px`;
+    }
+  });
+});
+
+const onEntry = (entry) => {
+  entry.forEach((change) => {
+    if (change.isIntersecting) {
+      change.target.classList.add("show");
+    }
+  });
+};
+
+let options = {
+  threshold: [0.5],
+};
+
+let observer = new IntersectionObserver(onEntry, options);
+let elements = document.querySelectorAll(".onscroll");
+
+for (let elm of elements) {
+  observer.observe(elm);
+}

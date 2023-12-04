@@ -30,25 +30,27 @@
         </label>
       </div>
     </header>
-    <main class="container mx-auto px-4 mb-12">
-      <div class="flex justify-center items-center gap-[280px] mb-8">
-        <h2 class="block text-5xl leading-[4rem]" id="hero-section">
-          <strong>Блокчейн</strong><br />
-          что это такое <br />и как его используют
-        </h2>
-        <a
-          href="https://academy.binance.com/ru/articles/what-is-blockchain-and-how-does-it-work"
-          target="_blank"
-          class="transition ease-out hover:scale-105 hidden md:block"
-        >
-          <img
-            src="/blockchain.png"
-            alt="Блокчейн"
-            width="350px"
-            height="350px"
-        /></a>
-      </div>
-      <section class="mb-8">
+    <main class="container mx-auto px-4 mb-12 overflow-hidden">
+      <section class="onscroll">
+        <div class="flex justify-center items-center gap-[280px] mb-8">
+          <h2 class="block text-5xl leading-[4rem]" id="hero-section">
+            <strong>Блокчейн</strong><br />
+            что это такое <br />и как его используют
+          </h2>
+          <a
+            href="https://academy.binance.com/ru/articles/what-is-blockchain-and-how-does-it-work"
+            target="_blank"
+            class="transition ease-out hover:scale-105 hidden md:block"
+          >
+            <img
+              src="/blockchain.png"
+              alt="Блокчейн"
+              width="350px"
+              height="350px"
+          /></a>
+        </div>
+      </section>
+      <section class="mb-8 onscroll">
         <h3 class="text-3xl mb-8">Что такое технология блокчейн?</h3>
         <p class="text-lg mb-4">
           <b>Технология блокчейн</b> — это <i>усовершенствованный</i> механизм
@@ -76,7 +78,7 @@
           </p>
         </blockqute>
       </section>
-      <section class="mb-8">
+      <section class="mb-8 onscroll">
         <h3 class="text-3xl mb-8">Что такое смарт контракты на блокчейне</h3>
         <p class="text-lg mb-4">
           <a
@@ -99,7 +101,7 @@
           изменению и являются обязательными для всех участников.
         </p>
       </section>
-      <section class="mb-8">
+      <section class="mb-8 onscroll">
         <h3 class="text-3xl mb-8">Пример смарт-контракта Ethereum</h3>
         <pre class="overflow-x-auto">
 contract VendingMachine {
@@ -126,7 +128,7 @@ contract VendingMachine {
 }
         </pre>
       </section>
-      <section class="mb-8" id="popular">
+      <section class="mb-8 onscroll" id="popular">
         <h3 class="text-3xl mb-8">Популярные блокчейны</h3>
         <ol type="a" start="2" class="list-[lower-alpha] ml-16 mb-8">
           <li>Ethereum</li>
@@ -148,7 +150,7 @@ contract VendingMachine {
           </li>
         </ol>
       </section>
-      <section class="mb-8 clearfix">
+      <section class="mb-8 clearfix onscroll">
         <img
           src="/section-image-0.png"
           alt="Аниме"
@@ -164,7 +166,7 @@ contract VendingMachine {
           iste, perferendis ea?
         </p>
       </section>
-      <section class="mb-8 clearfix">
+      <section class="mb-8 clearfix onscroll">
         <img
           src="/section-image-1.png"
           alt="Аниме"
@@ -180,7 +182,7 @@ contract VendingMachine {
           iste, perferendis ea?
         </p>
       </section>
-      <section class="mb-8" id="terms">
+      <section class="mb-8 onscroll" id="terms">
         <h3 class="text-3xl mb-8">Термины используемые в блокчейне</h3>
         <dl class="text-lg">
           <dt>Блокчейн</dt>
@@ -1626,7 +1628,60 @@ contract VendingMachine {
           Покзать уведомление
         </button>
       </section>
-      <div class="notification"></div>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Центрировання картинка c с помощью JS</h3>
+        <div class="w-full h-96 relative">
+          <img
+            src="./mountains.png"
+            alt="Горы"
+            class="w-56 h-56 absolute"
+            id="centered-image"
+          />
+        </div>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Parallax</h3>
+        <div class="w-full h-[565px] relative parallax overflow-hidden">
+          <img
+            src="/parallax/hill1.png"
+            class="absolute top-0 left-0 w-full transition-all ease-out"
+            data-speedX="0"
+            data-speedY="1.2"
+          />
+          <img src="/parallax/hill2.png" class="absolute top-0 left-0 w-full" />
+          <img src="/parallax/hill3.png" class="absolute top-0 left-0 w-full" />
+          <img
+            src="/parallax/hill4.png"
+            class="absolute top-0 left-0 w-full transition-all ease-out"
+            data-speedX="-1.2"
+            data-speedY="0"
+          />
+          <img
+            src="/parallax/hill5.png"
+            class="absolute top-0 left-0 w-full transition-all ease-out"
+            data-speedX="1.2"
+            data-speedY="0"
+            v
+          />
+          <img src="/parallax/tree.png" class="absolute top-0 left-0 w-full" />
+          <img
+            src="/parallax/leaf.png"
+            class="absolute top-0 left-0 w-full transition-all ease-out"
+            data-speedX="1.2"
+            data-speedY="-1.2"
+          />
+          <img src="/parallax/plant.png" class="absolute top-0 left-0 w-full" />
+        </div>
+        <div class="h-screen"></div>
+      </section>
+      <div class="notification relative">
+        <div class="text-content"></div>
+        <button
+          class="close-notification text-[#646cff] font-bold absolute right-3 top-2"
+        >
+          ✕
+        </button>
+      </div>
     </main>
 
     <footer
