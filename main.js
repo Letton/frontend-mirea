@@ -432,3 +432,160 @@ let elements = document.querySelectorAll(".onscroll");
 for (let elm of elements) {
   observer.observe(elm);
 }
+
+const contents = document.getElementById("contents");
+
+contents.addEventListener("click", (e) => {
+  if (e.target.nodeName === "A") {
+    e.preventDefault();
+    const flag = confirm("Вы действительно хотите перейти по ссылке?");
+    if (flag) {
+      window.open(`${e.target.getAttribute("href")}`);
+    }
+  }
+});
+
+const thumbs = document.getElementById("thumbs");
+
+const showThumbnail = (href, title) => {
+  largeImg.src = href;
+  largeImg.alt = title;
+};
+
+thumbs.addEventListener("click", (e) => {
+  let thumbnail = e.target.closest("a");
+
+  if (!thumbnail) return;
+  showThumbnail(thumbnail.href, thumbnail.title);
+  e.preventDefault();
+});
+
+const list = document.getElementById("customList");
+const listItems = list.getElementsByTagName("li");
+
+list.addEventListener("click", function (e) {
+  const target = e.target;
+  const isCtrlPressed = e.ctrlKey || e.metaKey;
+  e.preventDefault();
+  if (!isCtrlPressed) {
+    for (let i = 0; i < listItems.length; i++) {
+      listItems[i].classList.remove("selected");
+    }
+  }
+  target.classList.toggle("selected");
+});
+
+const slider = document.getElementById("custom-slider");
+const thumb = document.getElementById("slider-thumb");
+let isDragging = false;
+
+thumb.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  document.addEventListener("mousemove", handleMouseMove);
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+    document.removeEventListener("mousemove", handleMouseMove);
+  });
+});
+
+const handleMouseMove = (e) => {
+  if (!isDragging) return;
+  const sliderRect = slider.getBoundingClientRect();
+  let position = e.clientX - sliderRect.left;
+  position = Math.max(0, Math.min(position, sliderRect.width));
+
+  const percentage = (position / sliderRect.width) * 100;
+  thumb.style.left = `${percentage}%`;
+};
+
+const items = document.querySelectorAll(".product");
+const totalElement = document.getElementById("total");
+const shoppingCart = document.querySelector(".shopping-cart");
+
+let total = 0;
+
+items.forEach((item) => {
+  item.addEventListener("dragstart", handleDragStart);
+});
+
+shoppingCart.addEventListener("dragover", handleDragOver);
+shoppingCart.addEventListener("drop", handleDrop);
+
+function handleDragStart(event) {
+  event.dataTransfer.setData("id", event.target.dataset.price);
+  event.dataTransfer.setData("title", event.target.dataset.title);
+  event.dataTransfer.setData("price", event.target.dataset.price);
+}
+
+function handleDragOver(event) {
+  event.preventDefault();
+}
+
+function handleDrop(event) {
+  event.preventDefault();
+  const id = event.dataTransfer.getData("id");
+  const title = event.dataTransfer.getData("title");
+  const price = event.dataTransfer.getData("price");
+  addToCart(id, title, price);
+}
+
+function animate({ duration, draw, timing }) {
+  let start = performance.now();
+
+  requestAnimationFrame(function animate(time) {
+    let timeFraction = (time - start) / duration;
+    if (timeFraction > 1) timeFraction = 1;
+
+    let progress = timing(timeFraction);
+
+    draw(progress);
+
+    if (timeFraction < 1) {
+      requestAnimationFrame(animate);
+    }
+  });
+}
+
+const firstAnimation = document.getElementById("firstAnimation");
+const secondAnimation = document.getElementById("secondAnimation");
+
+firstAnimation.addEventListener("click", () => {
+  animate({
+    duration: 1000,
+    timing(timeFraction) {
+      return Math.pow(timeFraction, 5);
+    },
+    draw(progress) {
+      firstAnimation.style.left = progress * 90 + "%";
+    },
+  });
+});
+
+function makeEaseInOut(timing) {
+  return function (timeFraction) {
+    if (timeFraction < 0.5) return timing(2 * timeFraction) / 2;
+    else return (2 - timing(2 * (1 - timeFraction))) / 2;
+  };
+}
+
+function bounce(timeFraction) {
+  for (let a = 0, b = 1; 1; a += b, b /= 2) {
+    if (timeFraction >= (7 - 4 * a) / 11) {
+      return (
+        -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
+      );
+    }
+  }
+}
+
+let bounceEaseInOut = makeEaseInOut(bounce);
+
+secondAnimation.addEventListener("click", () => {
+  animate({
+    duration: 3000,
+    timing: bounceEaseInOut,
+    draw(progress) {
+      secondAnimation.style.left = progress * 90 + "%";
+    },
+  });
+});

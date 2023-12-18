@@ -45,6 +45,7 @@
   }
 }
 
+
 @layer utilities {
   .glass-effect {
     backdrop-filter: var(--blackdrop-filter-glass-effect);
@@ -290,4 +291,10 @@
     opacity: 1;
     transform: translateX(0);
   } 
+}
+
+li {
+  &.selected {
+    @apply bg-[#646cff];
+  }
 }

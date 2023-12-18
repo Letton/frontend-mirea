@@ -1522,6 +1522,7 @@ contract VendingMachine {
             data-id="1"
             data-price="150"
             data-title="Товар 1"
+            draggable="true"
           >
             <h4 class="text-center mb-4 text-2xl">Товар 1</h4>
             <p class="text-xl text-center mb-2">$150</p>
@@ -1532,6 +1533,7 @@ contract VendingMachine {
             </button>
           </div>
           <div
+            draggable="true"
             class="product bg-[#383838] p-8 w-sm"
             data-id="2"
             data-price="99"
@@ -1546,6 +1548,7 @@ contract VendingMachine {
             </button>
           </div>
           <div
+            draggable="true"
             class="product bg-[#383838] p-8 w-sm"
             data-id="3"
             data-price="150"
@@ -1560,6 +1563,7 @@ contract VendingMachine {
             </button>
           </div>
           <div
+            draggable="true"
             class="product bg-[#383838] p-8 w-sm"
             data-id="4"
             data-price="150"
@@ -1574,6 +1578,7 @@ contract VendingMachine {
             </button>
           </div>
           <div
+            draggable="true"
             class="product bg-[#383838] p-8 w-sm"
             data-id="5"
             data-price="199"
@@ -1588,6 +1593,7 @@ contract VendingMachine {
             </button>
           </div>
           <div
+            draggable="true"
             class="product bg-[#383838] p-8 w-sm"
             data-id="6"
             data-price="249"
@@ -1605,7 +1611,7 @@ contract VendingMachine {
       </section>
       <section class="mb-8">
         <h3 class="text-3xl mb-8">Корзина</h3>
-        <div class="shopping-cart">
+        <div class="shopping-cart" droppable="true">
           <div class="text-xl px-4">Ваша корзина пуста</div>
         </div>
       </section>
@@ -1672,8 +1678,95 @@ contract VendingMachine {
           />
           <img src="/parallax/plant.png" class="absolute top-0 left-0 w-full" />
         </div>
-        <div class="h-screen"></div>
       </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Ссылки</h3>
+        <ul id="contents">
+          <li>
+            <a href="https://google.com">Google</a>
+          </li>
+          <li>
+            <a href="https://yandex.ru">Yandex</a>
+          </li>
+          <li>
+            <a href="https://bing.com">Bing</a>
+          </li>
+        </ul>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Галлерея</h3>
+        <p class="mb-5">
+          <img
+            id="largeImg"
+            src="https://en.js.cx/gallery/img1-lg.jpg"
+            alt="Large image"
+          />
+        </p>
+        <ul id="thumbs" class="flex w-[550px] justify-between">
+          <li>
+            <a href="https://en.js.cx/gallery/img2-lg.jpg" title="Image 2"
+              ><img src="https://en.js.cx/gallery/img2-thumb.jpg"
+            /></a>
+          </li>
+          <li>
+            <a href="https://en.js.cx/gallery/img3-lg.jpg" title="Image 3"
+              ><img src="https://en.js.cx/gallery/img3-thumb.jpg"
+            /></a>
+          </li>
+          <li>
+            <a href="https://en.js.cx/gallery/img4-lg.jpg" title="Image 4"
+              ><img src="https://en.js.cx/gallery/img4-thumb.jpg"
+            /></a>
+          </li>
+          <li>
+            <a href="https://en.js.cx/gallery/img5-lg.jpg" title="Image 5"
+              ><img src="https://en.js.cx/gallery/img5-thumb.jpg"
+            /></a>
+          </li>
+          <li>
+            <a href="https://en.js.cx/gallery/img6-lg.jpg" title="Image 6"
+              ><img src="https://en.js.cx/gallery/img6-thumb.jpg"
+            /></a>
+          </li>
+        </ul>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Список</h3>
+        <ul id="customList">
+          <li class="px-4 py-2">Item 1</li>
+          <li class="px-4 py-2">Item 2</li>
+          <li class="px-4 py-2">Item 3</li>
+          <li class="px-4 py-2">Item 4</li>
+          <li class="px-4 py-2">Item 5</li>
+        </ul>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Слайдер</h3>
+        <div
+          id="custom-slider"
+          class="w-[320px] h-[10px] bg-[#383838] relative"
+        >
+          <div
+            id="slider-thumb"
+            class="absolute -top-[3px] left-0 w-[15px] h-[15px] bg-[#646cff]"
+          ></div>
+        </div>
+      </section>
+      <section class="mb-8">
+        <h3 class="text-3xl mb-8">Анимации</h3>
+        <div class="h-36 relative" id="firstAnimation">
+          <div class="w-10 h-10 bg-[#646cff] absolute top-0 left-0"></div>
+        </div>
+        <div class="h-36 relative">
+          <div
+            id="secondAnimation"
+            class="w-10 h-10 rounded-full bg-[#646cff] absolute top-0 left-0"
+          ></div>
+        </div>
+      </section>
+      <div
+        class="hidden total-price text-xl text-right px-4 border-b-2 border-[#383838] py-12 justify-between btn-minus w-5 h-5 rounded-full bg-[#646cff] leading-[20px]"
+      ></div>
       <div class="notification relative">
         <div class="text-content"></div>
         <button
